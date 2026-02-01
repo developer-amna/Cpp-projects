@@ -1,0 +1,72 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int n;
+    float credit, grade;
+    float totalCredits = 0;
+    float totalGradePoints = 0;
+
+    cout << "Enter number of courses: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        cout << "\nCourse " << i << endl;
+        cout << "Enter Credit Hours: ";
+        cin >> credit;
+
+        cout << "Enter Grade Point (e.g. 4.0, 3.5): ";
+        cin >> grade;
+
+        totalCredits += credit;
+        totalGradePoints += credit * grade;
+    }
+
+    float GPA = totalGradePoints / totalCredits;
+
+    cout << fixed << setprecision(2);
+    cout << "\n-----------------------------";
+    cout << "\nTotal Credits: " << totalCredits;
+    cout << "\nTotal Grade Points: " << totalGradePoints;
+    cout << "\nSemester GPA / CGPA: " << GPA;
+    cout << "\n-----------------------------";
+
+    return 0;
+}
+
+// Output
+
+/*
+Enter number of courses: 6
+
+Course 1
+Enter Credit Hours: 4
+Enter Grade Point (e.g. 4.0, 3.5): 4
+
+Course 2
+Enter Credit Hours: 4
+Enter Grade Point (e.g. 4.0, 3.5): 4
+
+Course 3
+Enter Credit Hours: 3
+Enter Grade Point (e.g. 4.0, 3.5): 3.6
+
+Course 4
+Enter Credit Hours: 3
+Enter Grade Point (e.g. 4.0, 3.5): 3.6
+
+Course 5
+Enter Credit Hours: 3
+Enter Grade Point (e.g. 4.0, 3.5): 3.8
+
+Course 6
+Enter Credit Hours: 2
+Enter Grade Point (e.g. 4.0, 3.5): 4
+
+-----------------------------
+Total Credits: 19.00
+Total Grade Points: 73.00
+Semester GPA / CGPA: 3.84 
+
+*/
